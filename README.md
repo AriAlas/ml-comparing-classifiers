@@ -19,15 +19,15 @@ The project follows a CRISP-DM-like process and is designed to inform marketing 
 👉 [Click here to view the full Jupyter notebook](https://github.com/AriAlas/ml-comparing-classifiers/blob/main/comparing-classifiers.ipynb)
 
 ## Model Evaluation & Business Insights
-To evaluate model performance, ROC AUC was used as the primery metric, aligning with the goal of prioritizing customers most likely to subscribe to a term deposit. Below is a summary of findings from the final model comparison:
+To evaluate model performance, ROC AUC was used as the primary metric, aligning with the goal of prioritizing customers most likely to subscribe to a term deposit. Below is a summary of findings from the final model comparison:
 
 
-[paste table here]
+![ROC](./images/ROC_Curves.png)
 
-Although both Logistic Regression and SVM performed similarly in terms of AUC, Logistic Regression was selected for its faster training time and ease of interpretation.
+ Based on the comparison above Logistic Regression outperformed all others and was selected for its faster training time and ease of interpretation.
 
 ## Key Insights (Based on Logistic Regression Coefficients)
-[Paste chart with positive coef]
+![Positive Coefs](./images/positive_coefs.png)
 
 - March was the most impactful contact month. Customers contacted in MArch had the strongest positive influence on subscription likelihood, according to the model. This suggest that making campaigns in March are significantly more effective than in other months.
 
@@ -38,11 +38,8 @@ Higher values of the consumer price index (cons.price.idx) and the 3-month Eurib
 - Past campaign success was a strong predictor.
 Customers who had a poutcome_success (successful outcome in a previous campaign) showed significantly higher odds of subscribing again, reinforcing the value of retargeting warm leads.
 
-- Students, retirees, and university graduates were more likely to subscribe.
-The features job_student, job_retired, and education_university.degree all appeared among the top positive coefficients, suggesting these demographic groups are more receptive to term deposit offers.
 
-
-[Paste chart with negative coef]
+![Negative Coefs](./images/negative_coefs.png)
 - Some months were highly ineffective.
 Contacting customers in May, November, and June had strong negative associations with conversions. These may be poor times for outreach due to seasonal behavior or distractions.
 
@@ -55,5 +52,5 @@ Contacting customers via telephone (rather than cellular) was associated with si
 - Certain job categories were less responsive.
 Customers working as entrepreneurs, in services, or in blue-collar occupations were less likely to subscribe, suggesting the need for tailored messaging or alternative products for these segments.
 
-- Long gaps since last contact (pdays) hurt performance
+- Long gaps since last contact (pdays) hurt performance.
 A higher number of days since last contact correlated negatively with conversions, reinforcing the value of timely follow-ups in marketing.
